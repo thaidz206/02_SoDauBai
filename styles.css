@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    height: 2000px;
+}
+.container {
+    width: calc(
+        100% - 20px
+    ); /* Tổng độ rộng là 100% trừ đi 40px (20px mỗi bên) */
+    margin: 0 auto; /* Căn giữa theo chiều ngang */
+    padding: 0 20px; /* Padding cách lề 20px */
+    margin-top: 50px;
+    height: 100%;
+}
+
+/* Header_SDB */
+.table-container {
+    overflow-x: auto;
+}
+
+/* Default - Desktop */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    word-wrap: break-word; /* Cho phép nội dung xuống dòng */
+}
+
+/* Container for scrolling */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Cho phép cuộn ngang */
+    overflow-y: hidden;
+    border: 1px solid black; /* Đảm bảo viền ngoài của bảng hiển thị đầy đủ */
+}
+
+.schedule-table th,
+.schedule-table td {
+    white-space: normal; /* Cho phép nội dung xuống dòng */
+}
+
+/* Media Queries for Tablet */
+@media (max-width: 1024px) {
+    .schedule-table th,
+    .schedule-table td {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .schedule-table th,
+    .schedule-table td {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .schedule-table {
+        width: 100%;
+        border: 1px solid black;
+    }
+}
+
+/* Đảm bảo khi có quá nhiều cột, cho phép cuộn ngang và giữ nguyên viền */
+.table-container::-webkit-scrollbar {
+    height: 8px; /* Độ dày thanh cuộn */
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #888; /* Màu thanh cuộn */
+    border-radius: 4px; /* Bo tròn thanh cuộn */
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Màu thanh cuộn khi hover */
+}
